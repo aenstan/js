@@ -1,0 +1,31 @@
+name: 中青阅读186
+
+on:  
+  workflow_dispatch:
+  schedule:
+    - cron: '0 19,21,23 * * *'
+#  watch:
+#    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: 'Install requests'
+        run: pip install requests
+
+      - name: 'run 中青阅读'
+        # youth_read.py目录自己修改
+        run: python3 Task/youth_read186.py
+        # 目前最大5个账号，可按格式继续填写
+        env:
+          BARK: ${{ secrets.BARK }}  #非必须 bark通知
+          SCKEY: ${{ secrets.SCKEY }}  #非必须 server酱通知
