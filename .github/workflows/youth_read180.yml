@@ -3,7 +3,7 @@ name: 中青阅读180
 on:  
   workflow_dispatch:
   schedule:
-    - cron: '0 19,21,23 * * *'
+    - cron: '0 17,20,23 * * *'
 #  watch:
 #   types: [started]
 jobs:
