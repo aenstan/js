@@ -2,8 +2,8 @@ name: 中青阅读135
 
 on:  
   workflow_dispatch:
-  schedule:
-    - cron: '0 17,20,23 * * *'
+#  schedule:
+#    - cron: '0 17,20,23 * * *'
 #  watch:
 #    types: [started]
 jobs:
