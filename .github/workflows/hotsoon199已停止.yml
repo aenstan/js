@@ -33,7 +33,7 @@ jobs:
       - name: '运行 【火山极速版】'
         run: |
           cd ~/JavaScript
-          node Task/hotsoon_old.js
+          node hotsoon_old.js
         env:  
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
